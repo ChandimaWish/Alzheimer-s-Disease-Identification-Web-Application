@@ -1,0 +1,1081 @@
+{
+	"info": {
+		"_postman_id": "d19ec7be-1876-49e6-80f6-e8ceb0fe4998",
+		"name": "ALZHEIMER DISEASE DETECTION",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16396695"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"SYSTEM\",\r\n    \"lastName\" : \"USER\",\r\n    \"email\" : \"system@pms.com\",\r\n    \"password\":\"1qaz@WSX\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"doctor@gmail.com\",\r\n    \"password\":\"1qaz@WSX\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2N0b3JAZ21haWwuY29tIiwiaWF0IjoxNzE0ODQzMzkyLCJleHAiOjE3MTQ4NDQ4MzJ9.hejfOr7urGPHfPelyYFjliStN383l3rQDBQ-oSLqKvA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v2/auth/validateToken",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"auth",
+								"validateToken"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "passwordReset- get url",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"doctor@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/password-reset-get-url",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"password-reset-get-url"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "password reset conform",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\" : \"1qaz@WSX\",\r\n    \"retypePassword\":\"1qaz@WSX\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/reset-password/eae177c2-f4ec-4768-81eb-41c0919f707c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"reset-password",
+								"eae177c2-f4ec-4768-81eb-41c0919f707c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "demo",
+			"item": [
+				{
+					"name": "demo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYXNkYXNkMSIsImlhdCI6MTcwNjcyMzUwNCwiZXhwIjoxNzA2NzI0OTQ0fQ.zKcSqxN8ScXyanlBC39DR94aLwpM1cyKgfmtDfi9CEg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/demo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"demo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "doctor",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpc3VydUBnbWFpbC5jb20iLCJpYXQiOjE3MDc2NjA5OTUsImV4cCI6MTcwNzY2MjQzNX0.cQC9ltMG8Bm7ARwZhXQ60ZrGID-zhDlIgpn1hy2JjJg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\" : \"isuru\",\r\n    \"lastName\" : \"kavinda\",\r\n    \"email\" : \"doctor@gmail.com\",\r\n    \"password\" : \"1qaz@WSX\",\r\n    \"registrationNumber\" : \"REG123\",\r\n    \"phoneNumber\" : \"0768409954\",\r\n    \"hospitalName\" : \"TESTH\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v2/doctor/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"doctor",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpc3VydUBnbWFpbC5jb20iLCJpYXQiOjE3MDY4MDgxNDIsImV4cCI6MTcwNjgwOTU4Mn0.6kXAjQSALup9LAD9jFvaXBNklfkfECXcxYjl0NrPfG8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\" : \"isuru\",\r\n    \"lastName\" : \"kavinda updated\",\r\n    \"registrationNumber\" : \"REG123\",\r\n    \"phoneNumber\" : \"0768409954\",\r\n    \"hospitalName\" : \"TESTH\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v2/doctor/updateDoctor?doctorId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"doctor",
+								"updateDoctor"
+							],
+							"query": [
+								{
+									"key": "doctorId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete doctor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpc3VydUBnbWFpbC5jb20iLCJpYXQiOjE3MDY4OTE0MjcsImV4cCI6MTcwNjg5Mjg2N30.VnYdSMVTgdDN38jqwCoKlaYHQx1nwu_c1i9_1CNQbKk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v2/doctor/deleteDoctor?doctorId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"doctor",
+								"deleteDoctor"
+							],
+							"query": [
+								{
+									"key": "doctorId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50QGdtYWlsLmNvbSIsImlhdCI6MTcxMTU1OTcxOSwiZXhwIjoxNzExNTYxMTU5fQ.jD1yaPgX0DFMK1KM1khS95kUcSPwmc8ft2y8IPQHEeU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v2/doctor/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"doctor",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get doctor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpc3VydUBnbWFpbC5jb20iLCJpYXQiOjE3MDcwNzI3MDIsImV4cCI6MTcwNzA3NDE0Mn0.g0n5avabJ-27PcQOMOig5xK6wwxlMPwaF5zjql3TzPA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v2/doctor?doctorId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"doctor"
+							],
+							"query": [
+								{
+									"key": "doctorId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "patient",
+			"item": [
+				{
+					"name": "create patient",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb2N0b3JAZ21haWwuY29tIiwiaWF0IjoxNzA3NjYxMDQ0LCJleHAiOjE3MDc2NjI0ODR9.VtNoP6YByrQwCq9FGOcMmzapuptOwBZdzuUgFejliQA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\" : \"isuru\",\r\n    \"lastName\" : \"patient\",\r\n    \"email\" : \"patient@gmail.com\",\r\n    \"password\" : \"1qaz@WSX\",\r\n    \"nic\" : \"REG123\",\r\n    \"phoneNumber\" : \"0768409954\",\r\n    \"bloodGroup\" : \"AP\",\r\n    \"dob\" : \"2024-01-23\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v2/patient/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"patient",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update patient",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpc3VydUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NTc4MTAsImV4cCI6MTcwNjk1OTI1MH0.jRGFKiFFc8xjwHKxMvFFPuE11vAYA9ypxzW2GzkNWPY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"isuru\",\r\n    \"lastName\": \"patient\",\r\n    \"nic\": \"REG123\",\r\n    \"phoneNumber\": \"0768409954\",\r\n    \"dob\": \"2024-01-25\",\r\n    \"bloodGroup\": \"AP\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v2/patient/updatePatient?patientId=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"patient",
+								"updatePatient"
+							],
+							"query": [
+								{
+									"key": "patientId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete patient",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpc3VydUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NTgyODAsImV4cCI6MTcwNjk1OTcyMH0.rw3PAOGEjEwMdMT1ZBy_JDet9AGQM2ZVpZXi2L7dXEQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v2/patient/deletePatient?patientId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"patient",
+								"deletePatient"
+							],
+							"query": [
+								{
+									"key": "patientId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50QGdtYWlsLmNvbSIsImlhdCI6MTcxMTU1OTcxOSwiZXhwIjoxNzExNTYxMTU5fQ.jD1yaPgX0DFMK1KM1khS95kUcSPwmc8ft2y8IPQHEeU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v2/patient/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"patient",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get patient",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpc3VydUBnbWFpbC5jb20iLCJpYXQiOjE3MDcxMTM1NDcsImV4cCI6MTcwNzExNDk4N30.-xT__mjQLZo38cDeVi_hiUnhbdJbxYMzXyXxXZWhEzE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v2/patient?patientId=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"patient"
+							],
+							"query": [
+								{
+									"key": "patientId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "create admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50QGdtYWlsLmNvbSIsImlhdCI6MTcwNzY2ODAwMiwiZXhwIjoxNzA3NjY5NDQyfQ.glXaoA_0DmG4Fs72kxDa-TlVn114HwWkfeoBJnMUTjc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\" : \"isuru\",\r\n    \"lastName\" : \"patient\",\r\n    \"email\" : \"admin1@gmail.com\",\r\n    \"password\" : \"1qaz@WSX\",\r\n    \"nic\" : \"REG1234\",\r\n    \"phoneNumber\" : \"0768409954\",\r\n    \"hospitalName\" : \"TEST HOS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v2/admin/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpc3VydUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NjA5NzQsImV4cCI6MTcwNjk2MjQxNH0.ULB3fMES_iIvPbuMI0BZrXVb99SCSfK4koetTFxXtg4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"isuru\",\r\n    \"lastName\": \"patient\",\r\n    \"nic\": \"REG123\",\r\n    \"phoneNumber\": \"0768409954\",\r\n    \"hospitalName\" : \"TEST HOS UPDATE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v2/admin/updateAdmin?adminId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"updateAdmin"
+							],
+							"query": [
+								{
+									"key": "adminId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpc3VydUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NjA5NzQsImV4cCI6MTcwNjk2MjQxNH0.ULB3fMES_iIvPbuMI0BZrXVb99SCSfK4koetTFxXtg4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v2/admin/deleteAdmin?adminId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"deleteAdmin"
+							],
+							"query": [
+								{
+									"key": "adminId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50QGdtYWlsLmNvbSIsImlhdCI6MTcxMTU1OTcxOSwiZXhwIjoxNzExNTYxMTU5fQ.jD1yaPgX0DFMK1KM1khS95kUcSPwmc8ft2y8IPQHEeU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v2/admin/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpc3VydUBnbWFpbC5jb20iLCJpYXQiOjE3MDY5NjA5NzQsImV4cCI6MTcwNjk2MjQxNH0.ULB3fMES_iIvPbuMI0BZrXVb99SCSfK4koetTFxXtg4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v2/admin?adminId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"admin"
+							],
+							"query": [
+								{
+									"key": "adminId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Data",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50QGdtYWlsLmNvbSIsImlhdCI6MTcxMDAxMjI2MiwiZXhwIjoxNzEwMDEzNzAyfQ.XrOkBrjLvBAOMj7oHQF2KUHyWqgHPC-WgEV2TSrYQFI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "patientId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "prediction",
+									"value": "mod",
+									"type": "text"
+								},
+								{
+									"key": "report",
+									"type": "file",
+									"src": "/C:/Users/Kavinda/Desktop/ShiftDel/ECG/ECG CNN/data/Normal/mi17.jpg"
+								},
+								{
+									"key": "reportedDate",
+									"value": "2024-02-10",
+									"type": "text"
+								},
+								{
+									"key": "comment",
+									"value": "test comment",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v2/reports/addReport",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"reports",
+								"addReport"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add new comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50QGdtYWlsLmNvbSIsImlhdCI6MTcxMDAxMjI2MiwiZXhwIjoxNzEwMDEzNzAyfQ.XrOkBrjLvBAOMj7oHQF2KUHyWqgHPC-WgEV2TSrYQFI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dataId\" : \"4\",\r\n    \"comment\" : \"test comment 3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v2/reports/addNewComment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"reports",
+								"addNewComment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50QGdtYWlsLmNvbSIsImlhdCI6MTcxMTM3OTk5OCwiZXhwIjoxNzExMzgxNDM4fQ.c9YR5XltVAerwHESCJjhmy-36stM8yczqMoZ_ZsYt4I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v2/reports/report?id=7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"reports",
+								"report"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by nic",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50QGdtYWlsLmNvbSIsImlhdCI6MTcxMTM3OTk5OCwiZXhwIjoxNzExMzgxNDM4fQ.c9YR5XltVAerwHESCJjhmy-36stM8yczqMoZ_ZsYt4I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v2/reports/findAllBy?nic=990492043V",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"reports",
+								"findAllBy"
+							],
+							"query": [
+								{
+									"key": "nic",
+									"value": "990492043V"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Search",
+			"item": [
+				{
+					"name": "universal search",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYXRpZW50QGdtYWlsLmNvbSIsImlhdCI6MTcxMTU2MTIwNywiZXhwIjoxNzExNTYyNjQ3fQ.DDehyu8aAzRKDttdVfGNbtJMKSduT-G4Fxy6Q-oPy7A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v2/search/filter?query=ad",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"search",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "ad"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Predictions",
+			"item": [
+				{
+					"name": "prediction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/D:/SHIFTDEL/ALZHEIMER/AlzheimerDatasetFull/VeryMildDemented/00b4979d-ac1c-40e3-90b2-422511918fc0.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/predict",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"predict"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
